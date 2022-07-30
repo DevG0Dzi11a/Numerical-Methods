@@ -9,9 +9,10 @@ void forward_elimination()
     {
         for(int i=k+1; i<=order_n;i++)
         {
+            double factor = (matrix[i][k] / matrix[k][k]);
             for(int j=k; j<=order_n+1; j++)
             {
-                matrix[i][j] = matrix[i][j] - (matrix[i][k] / matrix[k][k])*matrix[k][j];
+                matrix[i][j] = matrix[i][j] - (factor*matrix[k][j]);
             }
         }
     }
@@ -26,7 +27,7 @@ void backward_substitution()
         sum = 0;
         for(int j=k+1; j<=order_n; j++)
         {
-            sum = sum + matrix[k][j]*x[j];
+            sum = sum + (matrix[k][j]*x[j]);
         }
         x[k] = 1/matrix[k][k]*(matrix[k][order_n+1] - sum);
     }
@@ -44,7 +45,7 @@ int main()
             cin>>matrix[i][j];
         }
     }
-
+    cout<<endl<<endl;
     for(int i=1; i<=order_n; i++)
     {
         for(int j=1; j<=order_n+1; j++)
