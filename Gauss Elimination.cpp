@@ -45,29 +45,9 @@ int main()
             cin>>matrix[i][j];
         }
     }
-    cout<<endl<<endl;
-    for(int i=1; i<=order_n; i++)
-    {
-        for(int j=1; j<=order_n+1; j++)
-        {
-            cout<<matrix[i][j]<<" ";
-        }
-        cout<<endl;
-    }
 
     forward_elimination();
-    cout<<"After Elimintation"<<endl;
-
-    for(int i=1; i<=order_n; i++)
-    {
-        for(int j=1; j<=order_n+1; j++)
-        {
-            cout<<matrix[i][j]<<" ";
-        }
-        cout<<endl;
-    }
     backward_substitution();
-    cout<<"After backward substitution:"<<endl;
     for(int i=1; i<=order_n;i++)
     {
         cout<<"x"<<i<<" = "<<x[i]<<endl;
