@@ -3,7 +3,7 @@ using namespace std;
 int order_n;
 double matrix[100][100], x[100], b[100];
 
-void jaccobi()
+void gauss_seidel()
 {
     double temperror, sum, error, allowed_error = 0.001, temp;
     for(int i=1; i<=order_n; i++)
